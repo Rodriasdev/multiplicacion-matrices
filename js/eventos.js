@@ -46,13 +46,18 @@ function multiplicarMatrices() {
         matriz2.push(parseInt(input.value));
     });
     
-    // Verificar si las matrices pueden ser multiplicadas
+ 
+
     if (columnas1 !== filas2) {
         alert("El número de columnas de la Matriz 1 no coincide con el número de filas de la Matriz 2. No se pueden multiplicar.");
         return;
     }
-    
-    // Enviar datos al servidor para la multiplicación de matrices
+
+    if (columnas2 !== filas1) {
+        alert("El número de columnas de la Matriz 1 no coincide con el número de filas de la Matriz 2. No se pueden multiplicar.");
+        return;
+    }
+
     fetch('http://localhost:4000/multiplicar', {
         method: 'POST',
         headers: {
